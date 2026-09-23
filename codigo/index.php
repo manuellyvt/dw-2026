@@ -26,5 +26,7 @@
 
         <input type="submit" value="Acessar">
     </form>
+
+<p>Ainda não tem conta? <a href="usuario/cad_usuario.php">Cadastre-se aqui</a></p>
 </body>
 </html>

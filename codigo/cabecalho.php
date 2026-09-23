@@ -9,12 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Meu siteeeeeee</h2>
+    <h2>Projeto Rede Social</h2>
     <?php
         $email = $_SESSION['email'];
-        $senha = $_SESSION['senha'];
+        $nome = $_SESSION['nome'];
 
-        echo "<p>Olá $nome ($senha)</p>";
+        echo "<p> Olá $nome ($email)</p>";
     ?>
 </body>
 </html>

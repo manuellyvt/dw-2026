@@ -25,9 +25,8 @@
     </style>
 </head>
 <body>
-    <iframe class="i1" src="sessap.php"></iframe>
-    <iframe id="i2" src="menu.php"></iframe> //alterar
-    <iframe id="i3" name="conteudo"></iframe> //alterar 
+    <iframe class="i1" src="cabecalho.php"></iframe>
+    <iframe id="i2" src="menu.php"></iframe>
     <iframe class="i1" src="rodape.html"></iframe>
 </body>
 </html>
