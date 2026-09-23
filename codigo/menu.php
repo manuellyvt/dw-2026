@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <a target="conteudo" href="usuario/cad_usuario.php">Cadastro de Usuário</a> <br>
+    <a target="conteudo" href="postagem/listar_postagem.php">Postagens</a> <br>
+    <a target="conteudo" href="postagem/cad_postagem.php">Nova postagem</a> <br>
+    <a target="conteudo" href="usuario/cad_usuario.php?id=<?php echo $meu_id; ?>">Meu cadastro</a> <br>
     <a target="conteudo" href="usuario/lista_usuario.php">Lista de usuário</a> <br>
     <a target="conteudo" href="informacoes.html">Informações</a>
     <hr>

@@ -19,8 +19,10 @@
         $_SESSION['idusuario'] = $linha['idusuario'];
       
         header("Location: principal.php");
+        exit;
     }
     else {
-        header("Location: index.php?erro=login");    
+        header("Location: index.php?erro=login");
+        exit;
     }
 ?>
