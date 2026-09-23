@@ -8,8 +8,6 @@ $apelido = $_POST['apelido'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $foto = $_POST['foto'];
-$area = $_POST['area'];
-$carga = $_POST['carga'];
 
 if ($id == 0) {
     $sql = "INSERT INTO usuario (nome, apelido, email, senha, foto) VALUES ('$nome', '$apelido', '$email', '$senha', '$foto')";
