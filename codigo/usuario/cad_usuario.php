@@ -11,8 +11,8 @@
 
         $linha = mysqli_fetch_array($resultado);
         
-        $username = $linha['username'];
         $nome = $linha['nome'];
+        $apelido = $linha['apelido'];
         $email = $linha['email'];
         $senha = $linha['senha'];
         $foto = $linha['foto'];
@@ -20,8 +20,8 @@
     else {
         //novo insert
         $id = 0;
-        $username = '';
         $nome = '';
+        $apelido = '';
         $email = '';
         $senha = '';
         $foto = '';
@@ -37,11 +37,11 @@
 <body>
     <h3>Cadastro de usuario </h3>
     <form action="salvar_usuario.php?id=<?php echo $id; ?>" method="POST">
-        Username: <br>
-        <input type="text" name="username" value="<?php echo $username; ?>"> <br>
-        
         Nome: <br>
         <input type="text" name="nome" value="<?php echo $nome; ?>"> <br>
+        
+        Apelido: <br>
+        <input type="text" name="apelido" value="<?php echo $apelido; ?>"> <br>
         
         Email: <br>
         <input type="text" name="email" value="<?php echo $email; ?>"> <br>
