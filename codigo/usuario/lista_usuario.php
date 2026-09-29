@@ -16,7 +16,7 @@
 
     <table>
         <tr>
-            // cabeçalho da tabela
+            <!-- cabeçalho da tabela -->
             <td>id</td>
             <td>nome</td>
             <td>apelido</td>

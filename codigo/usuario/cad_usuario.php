@@ -1,17 +1,16 @@
 <?php
-    
-    require_once "../verifica_sessao.php";
-    
     if (isset($_GET['id'])) {
-        //editar update (so quem ta logado pode editar)
+        //editar update (só quem está logado pode editar)
+        require_once "../verifica_sessao.php";
+
         $id = $_GET['id'];
-        // puxa os dados do usuario do banco de dados
+        
         require_once "../conexao.php";
         $sql = "SELECT * FROM usuario WHERE idusuario = $id";
         $resultado = mysqli_query($conexao, $sql);
 
         $linha = mysqli_fetch_array($resultado);
-        // copia cada coluna do banco pra uma variavel solta 
+        
         $nome = $linha['nome'];
         $apelido = $linha['apelido'];
         $email = $linha['email'];
@@ -20,8 +19,6 @@
     }
     else {
         //novo insert
-        // id = 0 é o sinal que o salvar_usuario.php usa pra saber que é um INSERT (cadastro novo), não um UPDATE
-        // os campos estao vazios pra saber que e um cadastro novo e nao precisa buscar no banco de dados
         $id = 0;
         $nome = '';
         $apelido = '';
@@ -36,6 +33,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 40px 0;
+            min-height: 100vh;
+        }
+
+        h3 {
+            max-width: 350px;
+            margin: 0 auto 15px auto;
+            color: #444;
+            text-align: center;
+        }
+
+        form {
+            max-width: 350px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 16px;
+            outline: none;
+            font-size: 0.9em;
+            background: #fafafa;
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+
+        input[type="text"]:focus {
+            border-color: #999;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background: #444;
+        }
+    </style>
 </head>
 <body>
     <h3>Cadastro de usuario </h3>

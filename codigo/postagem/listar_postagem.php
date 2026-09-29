@@ -148,7 +148,7 @@
 </head>
 
 <body>
-    <h2>Lista de postagens</h2>
+    <h2> Postagens de hoje </h2>
 
     <!-- tabela -->
     <div class="postagens">

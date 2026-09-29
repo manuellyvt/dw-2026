@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .titulo {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .bloco-gif {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            background: #fafafa;
+        }
+
+        .bloco-gif img {
+            display: block;
+            width: 250px;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-    Esse é o projeto da Rede Social
-    <br><br>
-    <img src="imagens/cachorro-balanco.gif" width="300">
+    <span class="titulo">Esse é o projeto da Rede Social</span>
+
+    <div class="bloco-gif">
+        <img src="imagens/cachorro-balanco.gif">
+    </div>
 </body>
 </html>
