@@ -1,16 +1,17 @@
 <?php
+    
     require_once "../verifica_sessao.php";
     
     if (isset($_GET['id'])) {
-        //editar update
+        //editar update (so quem ta logado pode editar)
         $id = $_GET['id'];
-        
+        // puxa os dados do usuario do banco de dados
         require_once "../conexao.php";
         $sql = "SELECT * FROM usuario WHERE idusuario = $id";
         $resultado = mysqli_query($conexao, $sql);
 
         $linha = mysqli_fetch_array($resultado);
-        
+        // copia cada coluna do banco pra uma variavel solta 
         $nome = $linha['nome'];
         $apelido = $linha['apelido'];
         $email = $linha['email'];
@@ -19,6 +20,8 @@
     }
     else {
         //novo insert
+        // id = 0 é o sinal que o salvar_usuario.php usa pra saber que é um INSERT (cadastro novo), não um UPDATE
+        // os campos estao vazios pra saber que e um cadastro novo e nao precisa buscar no banco de dados
         $id = 0;
         $nome = '';
         $apelido = '';

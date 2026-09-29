@@ -1,4 +1,5 @@
-<?php
+<?php 
+    // puxa o arquivo de verificação de sessão
     require_once "verifica_sessao.php";
 ?>
 <!DOCTYPE html>

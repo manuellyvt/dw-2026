@@ -12,12 +12,15 @@
 </head>
 <body>
     <?php
+        // verifica se existe a variável de erro na URL, e se ela e exatamente no login,
+        // se existir exibe a mensagem de erro
         if (isset($_GET['erro'])) {
             if ($_GET['erro'] == "login") {
                 echo "<p>Login e/ou senha incorretos.</p>";
             }
         }
     ?>
+
     <form action="verificar_login.php" method="post">
         E-mail: <br>
         <input type="text" name="email"> <br><br>
