@@ -25,12 +25,10 @@
         $_SESSION['idusuario'] = $linha['idusuario'];
     // redireciona o usuário para a página principal
         header("Location: principal.php");
-        exit;
     }
     // se a quantidade de linhas for diferente de 1, significa que o usuário não existe ou a senha está incorreta
     else {
     // redireciona o usuário de volta para a página de login com uma mensagem de erro
         header("Location: index.php?erro=login");
-        exit;
     }
 ?>
