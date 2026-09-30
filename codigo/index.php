@@ -26,10 +26,6 @@
             padding: 24px;
         }
 
-        label, form br + br {
-            color: #555;
-        }
-
         input[type="text"] {
             width: 100%;
             padding: 8px 12px;
@@ -61,6 +57,21 @@
             background: #444;
         }
 
+        .welcome-img {
+            display: block;
+            max-width: 300px;
+            width: 100%;
+            margin: 0 auto 15px auto;
+        }
+
+        .titulo-login {
+            max-width: 350px;
+            margin: 0 auto 15px auto;
+            text-align: center;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
         p {
             color: #cc4444;
             max-width: 350px;
@@ -86,16 +97,15 @@
     </style>
 </head>
 <body>
+    <img class="welcome-img" src="imagens/welcome.png" alt="Bem-vindo">
+
     <?php
-        // verifica se existe a variável de erro na URL, e se ela e exatamente no login,
-        // se existir exibe a mensagem de erro
         if (isset($_GET['erro'])) {
             if ($_GET['erro'] == "login") {
-                echo "<p>Login e/ou senha incorretos.</p>";
+                echo "<p>˚ Login e/ou senha incorretos </p>";
             }
         }
     ?>
-
     <form action="verificar_login.php" method="post">
         E-mail: <br>
         <input type="text" name="email"> <br><br>
