@@ -157,28 +157,34 @@
 
         $sql = "SELECT * FROM postagem";
 
+        // recebe o resultado da query e guarda na variável $resultados
         $resultados = mysqli_query($conexao, $sql);
 
+        // percorre cada linha do resultado da query
         while ($linha = mysqli_fetch_array($resultados)) {
             $idpostagem = $linha['idpostagem'];
             $texto = $linha['texto'];
             $data_hora = $linha['data_hora'];
             $idusuario = $linha['idusuario'];
 
+        // puxa os dados do usuário que fez a postagem
             $sql2 = "SELECT * FROM usuario WHERE idusuario = $idusuario";
             $resultado = mysqli_query($conexao, $sql2);
             $usuario = mysqli_fetch_array($resultado);
-
+        
             $foto = $usuario['foto'];
             $nome = $usuario['nome'];
 
+        // exibe a postagem
             echo "<div class='postagem'>";
 
+        // exibe a foto do usuário e o nome do usuário
             echo "<div>";
             echo "<img src='$foto'>";
             echo "<span class='nome-autor'>$nome</span>";
             echo "</div>";
 
+        // exibe o texto da postagem
             echo $texto;
 
             echo "<div class='horario'>$data_hora</div>";
@@ -187,16 +193,19 @@
             $sql3 = "SELECT * FROM comentario WHERE idpostagem = $idpostagem";
             $comentarios = mysqli_query($conexao, $sql3);
 
+        // verifica se existem comentários para a postagem
             if (mysqli_num_rows($comentarios) == 0) {
             echo "<div class='sem-comentarios'>Essa postagem não possui comentários.</div>";
             } else {
                 echo "<div class='comentarios'>";
                 // listar comentários aqui
 
+        // percorre cada comentário da postagem
                 while ($comentario = mysqli_fetch_array($comentarios)) {
                     $idusuario_comentario = $comentario['idusuario'];
                     $texto_comentario = $comentario['texto'];
-
+                    
+                // pra cada comentario busca o usuario que comentou e exibe a foto do usuario e o texto do comentario
                     $sql4 = "SELECT * FROM usuario WHERE idusuario = $idusuario_comentario";
                     $resultado = mysqli_query($conexao, $sql4);
                     $usuario = mysqli_fetch_array($resultado);

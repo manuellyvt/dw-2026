@@ -8,7 +8,8 @@
         require_once "../conexao.php";
         $sql = "SELECT * FROM usuario WHERE idusuario = $id";
         $resultado = mysqli_query($conexao, $sql);
-
+        
+    // verifica se encontrou o usuário
         $linha = mysqli_fetch_array($resultado);
         
         $nome = $linha['nome'];

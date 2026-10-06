@@ -4,7 +4,8 @@
 
     $texto = $_POST['texto'];
     $idusuario = $_SESSION['idusuario'];
-
+    
+    // insere a postagem no banco de dados com a data e hora atual
     $sql = "INSERT INTO postagem (texto, data_hora, idusuario) VALUES ('$texto', NOW(), $idusuario)";
 
     mysqli_query($conexao, $sql);
